@@ -6,7 +6,7 @@ const errorMsg = document.querySelector('#errorMsg');
 const msg = document.querySelector('#msg');
 
 const getLocation = (location) => {
-    fetch(`http://localhost:3000/weather?address=${location}`).then((response)=>{
+    fetch(`/weather?address=${location}`).then((response)=>{
      response.json().then((data, error)=>{
          console.log(data)
          console.log('TTTTT', error)
@@ -20,13 +20,7 @@ const getLocation = (location) => {
      
     })
     })
-    // .catch((error)=>{
-    //     errorMsg.textContent = 'Please try other location'
-    // })
 }
-
-
-
 
 weatherForm.addEventListener('submit', (event )=>{
     event.preventDefault();
